@@ -14,6 +14,7 @@ class BookAdapter(var bookList:List<Book>): RecyclerView.Adapter<BookAdapter.Boo
         fun binkBooks(book:Book) = with(binding){
             titleBook.text = book.title
             authorBook.text = book.author
+            pagesBook.text = book.num_pages.toString()
             costBook.text = book.cost.toString() + " tenge"
             descBook.text = book.description
         }

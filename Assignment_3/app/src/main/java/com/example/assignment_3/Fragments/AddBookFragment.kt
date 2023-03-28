@@ -1,60 +1,57 @@
 package com.example.assignment_3.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.assignment_3.R
+import com.example.assignment_3.bookData.Book
+import com.example.assignment_3.bookData.BookDatabase
+import com.example.assignment_3.databinding.FragmentAddBookBinding
+import java.util.regex.Pattern
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AddBookFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AddBookFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var binding: FragmentAddBookBinding
+    val num = Pattern.compile("^[0-9]+\$").toRegex()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentAddBookBinding.inflate(inflater)
+        val context = requireActivity()
+        val database = BookDatabase.getBookDatabase(context)
+
+        binding.addBook2Btn.setOnClickListener{
+            if(binding.title.text.isEmpty()) binding.title.error = "Empty title!"
+            else if(binding.author.text.isEmpty()) binding.author.error = "Empty author!"
+            else if(binding.numPages.text.isEmpty()) binding.author.error = "Empty number of pages!"
+            else if(binding.description.text.isEmpty()) binding.description.error = "Empty description!"
+            else if(binding.cost.text.isEmpty()) binding.cost.error = "Empty cost!"
+            else if(binding.cost.text.matches(num)) binding.cost.error = "Cost must be number!"
+            else{
+                var temp = Book(
+                    null,
+                    binding.title.text.toString(),
+                    binding.author.text.toString(),
+                    binding.numPages.text.toString().toInt(),
+                    binding.description.text.toString(),
+                    binding.cost.text.toString().toDouble(),
+                )
+                Thread{
+                    database.getBookDao().insertBook(temp)
+                }.start()
+                Toast.makeText(context, "Book succesfully added!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(activity, com.example.assignment_3.AfterSignInAdminActivity::class.java)
+                startActivity(intent)
+            }
         }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_book, container, false)
+        return binding.root
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AddBookragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance() =
-            AddBookFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = AddBookFragment()
     }
 }

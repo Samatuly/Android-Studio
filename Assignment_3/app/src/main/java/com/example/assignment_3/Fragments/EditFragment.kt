@@ -49,10 +49,9 @@ class EditFragment : Fragment() {
 
         binding.addBookBtn2.setOnClickListener {
             val destinationFragment = AddBookFragment()
-            childFragmentManager.beginTransaction().replace(R.id.fragmentAddBook, destinationFragment)
-                .addToBackStack(null).commit()
+            val transction = fragmentManager?.beginTransaction()
+            transction?.replace(R.id.frameLayout,destinationFragment)?.commit()
         }
-
         return binding.root
     }
 

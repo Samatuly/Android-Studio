@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_addbook"
+    app:startDestination="@id/editFragment">
+
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.assignment_3.Fragments.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" />
+    <fragment
+        android:id="@+id/addBookFragment"
+        android:name="com.example.assignment_3.Fragments.AddBookFragment"
+        android:label="fragment_add_book"
+        tools:layout="@layout/fragment_add_book" />
+</navigation>
