@@ -56,8 +56,8 @@ class MainActivity : AppCompatActivity() {
                 if(response.isSuccessful){
                     val listNews = response.body()?.articles!!
                     listNews.forEachIndexed { index, article ->
-                        if(article.urlToImage == null){
-                            article.urlToImage = "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"
+                        if(article.image == null){
+                            article.image = "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"
                         }
                         if(article.title == null){
                             article.title = "No title"
@@ -70,9 +70,6 @@ class MainActivity : AppCompatActivity() {
                         }
                         if(article.publishedAt == null){
                             article.publishedAt = "No time  , no data"
-                        }
-                        if(article.author == null){
-                            article.author = "No author"
                         }
                         if(article.url == null){
                             article.url = "No url"
@@ -88,13 +85,12 @@ class MainActivity : AppCompatActivity() {
                             intent = Intent(this@MainActivity, ItemDetails::class.java)
                             intent.putExtra("title", listNews[position].title)
                             intent.putExtra("description", listNews[position].description)
-                            intent.putExtra("author", listNews[position].author)
                             intent.putExtra("content", listNews[position].content)
-                            intent.putExtra("imgUrl", listNews[position].urlToImage)
+                            intent.putExtra("imgUrl", listNews[position].image)
                             intent.putExtra("url", listNews[position].url)
                             intent.putExtra("time", listNews[position].publishedAt)
                             intent.putExtra("sourceName", listNews[position].source.name)
-                            intent.putExtra("sourceId", listNews[position].source.id)
+                            intent.putExtra("sourceId", listNews[position].source.url)
 
                             startActivity(intent)
                         }

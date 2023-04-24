@@ -45,9 +45,8 @@ class FavoriteNews : AppCompatActivity() {
                         intent = Intent(this@FavoriteNews, ItemDetails::class.java)
                         intent.putExtra("title", it[position].title)
                         intent.putExtra("description", it[position].description)
-                        intent.putExtra("author", it[position].author)
                         intent.putExtra("content", it[position].content)
-                        intent.putExtra("imgUrl", it[position].urlToImage)
+                        intent.putExtra("imgUrl", it[position].image)
                         startActivity(intent)
                     }
                 })

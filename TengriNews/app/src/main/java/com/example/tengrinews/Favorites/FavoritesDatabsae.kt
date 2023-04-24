@@ -16,7 +16,7 @@ abstract class FavoritesDatabsae: RoomDatabase() {
             return Room.databaseBuilder(
                 context.applicationContext,
                 FavoritesDatabsae::class.java,
-                "FavoritesEntity.db"
+                "FavoritesEntity.db2"
             ).build()
         }
     }

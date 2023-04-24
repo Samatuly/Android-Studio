@@ -46,7 +46,7 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.newsHolder>() {
             val cl = news.publishedAt.subSequence(11,16)
             time.text = "${day}, ${cl}"
 
-            val url = news.urlToImage
+            val url = news.image
             Glide.with(img)
                 .load(url)
                 .placeholder(R.drawable.image)

@@ -39,7 +39,7 @@ class FavoritesAdapter(var snewsList:List<FavoritesEntity>, val context: Context
         fun bind(snews:FavoritesEntity){
             text.text = snews.title
 
-            val url = snews.urlToImage
+            val url = snews.image
             Glide.with(img)
                 .load(url)
                 .placeholder(R.drawable.image)
@@ -56,7 +56,7 @@ class FavoritesAdapter(var snewsList:List<FavoritesEntity>, val context: Context
                     .setMessage("Are you sure delete this news? ")
                     .setPositiveButton("Yes"){inter, it ->
                         Thread{
-                            db.getNewsDao().deleteNewsByUrl(snews.urlToImage)
+                            db.getNewsDao().deleteNewsByUrl(snews.image)
                         }.start()
                         val int = Intent(context, FavoriteNews::class.java)
                         context.startActivity(int)

@@ -1,10 +1,14 @@
 package com.example.tengrinews
 
+import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.asLiveData
 import com.bumptech.glide.Glide
+import com.example.tengrinews.Favorites.FavoriteNews
+import com.example.tengrinews.Favorites.FavoritesDao
 import com.example.tengrinews.databinding.ActivityItemDetailsBinding
 import com.example.tengrinews.Favorites.FavoritesDatabsae
 import com.example.tengrinews.Favorites.FavoritesEntity
@@ -27,11 +31,10 @@ class ItemDetails : AppCompatActivity() {
         saveBtn.setOnClickListener{
             val tempSaveNews = FavoritesEntity(
                 null,
-                bundle!!.getString("author") as String,
                 bundle!!.getString("content") as String,
                 bundle!!.getString("description") as String,
                 bundle!!.getString("title") as String,
-                bundle!!.getString("imgUrl") as String,
+                bundle!!.getString("imgUrl") as String
             )
 
             db.getNewsDao().getAllSavedNews().asLiveData().observe(this){
@@ -43,7 +46,7 @@ class ItemDetails : AppCompatActivity() {
                 }
                 else{
                     for (i in it){
-                        if(i.urlToImage == bundle!!.getString("imgUrl") as String){
+                        if(i.image == bundle!!.getString("imgUrl") as String){
                             Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show()
                             break
                         }
@@ -56,13 +59,18 @@ class ItemDetails : AppCompatActivity() {
                     }
                 }
             }
+
+            fun deleteButton(tengrinews: FavoritesEntity){
+                Thread{
+                    db.getNewsDao().deleteNewsByUrl(tengrinews.image)
+                }.start()
+            }
         }
     }
 
     private fun createPage() {
         binding.titleDet.text = bundle!!.getString("title")
-        binding.discriptionDet.text = bundle!!.getString("description")
-        binding.authorDet.text = "Author: ${bundle!!.getString("author")}"
+        binding.descriptionDet.text = bundle!!.getString("description")
         binding.content.text = bundle!!.getString("content")
 
         val img = binding.imageView3
