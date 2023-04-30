@@ -26,7 +26,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/left_menu"
+        android:id="@+id/nav_menu"
         android:layout_width="220dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"

@@ -12,11 +12,11 @@ interface FavoritesDao {
     @Insert
     fun insertNews(FavoritesEntity: FavoritesEntity)
 
-    @Query("select * from FavoritesEntity2")
-    fun getAllSavedNews(): Flow<List<FavoritesEntity>>
+    @Query("select * from FavoritesEntity3")
+    fun getAllFavouriteNews(): Flow<List<FavoritesEntity>>
 
 
-    @Query("delete from FavoritesEntity2 where image like :img")
+    @Query("delete from FavoritesEntity3 where image like :img")
     fun deleteNewsByUrl(img: String)
 
 }

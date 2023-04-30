@@ -22,9 +22,18 @@ class ItemDetails : AppCompatActivity() {
         setContentView(binding.root)
 
         bundle = intent.extras as Bundle
-        createPage()
+        binding.title2.text = bundle!!.getString("title")
+        binding.description2.text = bundle!!.getString("description")
+        binding.content.text = bundle!!.getString("content")
 
-        supportActionBar?.title = "News Details"
+        val img = binding.imageItem2
+        val url = bundle!!.getString("imgUrl")
+        Glide.with(img)
+            .load(url)
+            .placeholder(R.drawable.image)
+            .error(R.drawable.image)
+            .fallback(R.drawable.image)
+            .into(img)
 
         val db = FavoritesDatabsae.getNewsDb(this)
         var saveBtn = binding.saveImgBtn
@@ -37,50 +46,28 @@ class ItemDetails : AppCompatActivity() {
                 bundle!!.getString("imgUrl") as String
             )
 
-            db.getNewsDao().getAllSavedNews().asLiveData().observe(this){
+            db.getNewsDao().getAllFavouriteNews().asLiveData().observe(this){
                 if(it.size == 0){
                     Thread{
                         db.getNewsDao().insertNews(tempSaveNews)
                     }.start()
-                    Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Successfully added to favourites", Toast.LENGTH_SHORT).show()
                 }
                 else{
                     for (i in it){
                         if(i.image == bundle!!.getString("imgUrl") as String){
-                            Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Successfully added to favourites", Toast.LENGTH_SHORT).show()
                             break
                         }
                         if(i == it[it.size-1]){
                             Thread{
                                 db.getNewsDao().insertNews(tempSaveNews)
                             }.start()
-                            Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Successfully added to favourites", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
             }
-
-            fun deleteButton(tengrinews: FavoritesEntity){
-                Thread{
-                    db.getNewsDao().deleteNewsByUrl(tengrinews.image)
-                }.start()
-            }
         }
     }
-
-    private fun createPage() {
-        binding.titleDet.text = bundle!!.getString("title")
-        binding.descriptionDet.text = bundle!!.getString("description")
-        binding.content.text = bundle!!.getString("content")
-
-        val img = binding.imageView3
-        val url = bundle!!.getString("imgUrl")
-        Glide.with(img)
-            .load(url)
-            .placeholder(R.drawable.image)
-            .error(R.drawable.image)
-            .fallback(R.drawable.image)
-            .into(img)
-    }
-
 }

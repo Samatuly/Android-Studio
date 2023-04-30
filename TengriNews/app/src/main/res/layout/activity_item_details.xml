@@ -7,23 +7,23 @@
     tools:context=".ItemDetails">
 
     <TextView
-        android:id="@+id/title_det"
+        android:id="@+id/title2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
+        android:text="Title must be here..."
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/image_item2" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/image_item2"
         android:layout_width="0dp"
         android:layout_height="210dp"
         android:layout_marginStart="8dp"
@@ -33,20 +33,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image" />
+        app:srcCompat="@drawable/baseline_photo_24" />
 
     <TextView
-        android:id="@+id/description_det"
+        android:id="@+id/description2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:maxLines="6"
-        android:text="TextView"
+        android:text="Description must be here..."
         android:textColor="@color/black"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/title_det"
-        app:layout_constraintStart_toStartOf="@+id/title_det"
-        app:layout_constraintTop_toBottomOf="@+id/title_det" />
+        app:layout_constraintEnd_toEndOf="@+id/title2"
+        app:layout_constraintStart_toStartOf="@+id/title2"
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
 
     <TextView
         android:id="@+id/content"
@@ -54,13 +54,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:maxLines="7"
-        android:text="TextView"
+        android:text="Content must be here..."
         android:textColor="@color/black"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/discription_det"
+        app:layout_constraintEnd_toEndOf="@+id/description2"
         app:layout_constraintHorizontal_bias="0.547"
-        app:layout_constraintStart_toStartOf="@+id/discription_det"
-        app:layout_constraintTop_toBottomOf="@+id/discription_det" />
+        app:layout_constraintStart_toStartOf="@+id/description2"
+        app:layout_constraintTop_toBottomOf="@+id/description2" />
 
     <ImageButton
         android:id="@+id/saveImgBtn"
@@ -68,10 +68,10 @@
         android:layout_height="50dp"
         android:background="#EC0000"
         android:src="@drawable/baseline_favorite_border_24"
-        app:layout_constraintBottom_toTopOf="@+id/title_det"
+        app:layout_constraintBottom_toTopOf="@+id/title2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/image_item2"
         app:layout_constraintVertical_bias="0.6" />
 </androidx.constraintlayout.widget.ConstraintLayout>

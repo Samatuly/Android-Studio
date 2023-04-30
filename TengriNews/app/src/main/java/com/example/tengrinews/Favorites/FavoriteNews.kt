@@ -23,23 +23,20 @@ class FavoriteNews : AppCompatActivity() {
         builder = AlertDialog.Builder(this)
         setContentView(binding.root)
 
-        supportActionBar?.title = "Saved News"
+        supportActionBar?.title = "Favourite News"
 
-        initRecyclerView()
-
-    }
-
-    private fun initRecyclerView() {
         var recyclerView  = binding.recyclerSave
-
         recyclerView.apply {
             val db = FavoritesDatabsae.getNewsDb(this@FavoriteNews)
-            db.getNewsDao().getAllSavedNews().asLiveData().observe(this@FavoriteNews){
+
+            db.getNewsDao().getAllFavouriteNews().asLiveData().observe(this@FavoriteNews){
                 if(it.size == 0){
-                    Toast.makeText(this@FavoriteNews, "No saved news!!!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@FavoriteNews, "No favorite news!", Toast.LENGTH_SHORT).show()
                 }
+
                 layoutManager = LinearLayoutManager(this@FavoriteNews)
                 recAdapter = FavoritesAdapter(it, this@FavoriteNews)
+
                 recAdapter.setOnItemClickListener(object : FavoritesAdapter.onItemClickListener{
                     override fun onItemClick(position: Int) {
                         intent = Intent(this@FavoriteNews, ItemDetails::class.java)
@@ -55,12 +52,13 @@ class FavoriteNews : AppCompatActivity() {
             }
         }
     }
+
     override fun onBackPressed() {
-        if (backPressedTime + 10 > System.currentTimeMillis()) {
+        if (backPressedTime + 1 > System.currentTimeMillis()) {
             super.onBackPressed()
         } else {
-            builder.setTitle("Exit Saves News")
-                .setMessage("Do you want to log out from saved news ?")
+            builder.setTitle("Exit")
+                .setMessage("Do you want to log out from favourite news?")
                 .setPositiveButton("Yes"){id, it ->
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)

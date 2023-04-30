@@ -41,85 +41,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 
-        left_menu()
-        initRecyclerView()
-        createData()
-    }
-
-    private fun createData() {
-        val api = API_instance.getApiInstance().create(API_service::class.java)
-        val call = api.getDataFromAPI()
-
-        call.enqueue(object : Callback<News>{
-
-            override fun onResponse(call: Call<News>,  response: Response<News>) {
-                if(response.isSuccessful){
-                    val listNews = response.body()?.articles!!
-                    listNews.forEachIndexed { index, article ->
-                        if(article.image == null){
-                            article.image = "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"
-                        }
-                        if(article.title == null){
-                            article.title = "No title"
-                        }
-                        if(article.description == null){
-                            article.description = "No description"
-                        }
-                        if(article.content == null){
-                            article.content = "No content"
-                        }
-                        if(article.publishedAt == null){
-                            article.publishedAt = "No time  , no data"
-                        }
-                        if(article.url == null){
-                            article.url = "No url"
-                        }
-                        if(article.source.name == null){
-                            article.source.name = "No name"
-                        }
-                    }
-                    recyclerViewAdapter.setList(listNews)
-                    recyclerViewAdapter.setOnItemClickListener(object : NewsAdapter.onItemClickListener{
-                        override fun onItemClick(position: Int) {
-//                            Toast.makeText(this@MainActivity, "You cliked $position", Toast.LENGTH_SHORT).show()
-                            intent = Intent(this@MainActivity, ItemDetails::class.java)
-                            intent.putExtra("title", listNews[position].title)
-                            intent.putExtra("description", listNews[position].description)
-                            intent.putExtra("content", listNews[position].content)
-                            intent.putExtra("imgUrl", listNews[position].image)
-                            intent.putExtra("url", listNews[position].url)
-                            intent.putExtra("time", listNews[position].publishedAt)
-                            intent.putExtra("sourceName", listNews[position].source.name)
-                            intent.putExtra("sourceId", listNews[position].source.url)
-
-                            startActivity(intent)
-                        }
-                    })
-                    recyclerViewAdapter.notifyDataSetChanged()
-                }
-            }
-
-            override fun onFailure(call: Call<News>, t: Throwable) {
-                Toast.makeText(this@MainActivity, "No internet access try again!", Toast.LENGTH_SHORT).show()
-                Log.d("onFailure", "true")
-            }
-
-        })
-
-    }
-
-    private fun initRecyclerView() {
-        var recyclerView  = binding.recyclerView
-
-        recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            recyclerViewAdapter = NewsAdapter()
-            adapter = recyclerViewAdapter
-        }
-    }
-
-    private fun left_menu() {
-        binding.leftMenu.setNavigationItemSelectedListener {
+        binding.navMenu.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.nav_favorites -> {
                     var intent = Intent(applicationContext, FavoriteNews::class.java)
@@ -128,6 +50,50 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        var recyclerView  = binding.recyclerView
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            recyclerViewAdapter = NewsAdapter()
+            adapter = recyclerViewAdapter
+        }
+
+        createData()
+    }
+
+    private fun createData() {
+        val api = API_instance.getApiInstance().create(API_service::class.java)
+        val call = api.getDataFromAPI()
+
+        call.enqueue(object : Callback<News>{
+            override fun onResponse(call: Call<News>,  response: Response<News>) {
+                if(response.isSuccessful){
+                    val listNews = response.body()?.articles!!
+                    recyclerViewAdapter.setList(listNews)
+                    recyclerViewAdapter.setOnItemClickListener(object : NewsAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            intent = Intent(this@MainActivity, ItemDetails::class.java)
+                            intent.putExtra("title", listNews[position].title)
+                            intent.putExtra("description", listNews[position].description)
+                            intent.putExtra("content", listNews[position].content)
+                            intent.putExtra("imgUrl", listNews[position].image)
+                            intent.putExtra("url", listNews[position].url)
+                            intent.putExtra("time", listNews[position].publishedAt)
+                            intent.putExtra("sourceName", listNews[position].source.name)
+                            intent.putExtra("sourceURL", listNews[position].source.url)
+                            startActivity(intent)
+                        }
+                    })
+                    recyclerViewAdapter.notifyDataSetChanged()
+                }
+            }
+            override fun onFailure(call: Call<News>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "Something happened wrong!", Toast.LENGTH_SHORT).show()
+                Log.d("onFailure", "true")
+            }
+
+        })
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -138,11 +104,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (backPressedTime + 10 > System.currentTimeMillis()) {
+        if (backPressedTime + 1 > System.currentTimeMillis()) {
             super.onBackPressed()
         } else {
-            builder.setTitle("Close application")
-                .setMessage("Do you want to close application?")
+            builder.setTitle("Exit")
+                .setMessage("Do you want to close app?")
                 .setPositiveButton("Yes"){id, it ->
                     finish()
                 }
@@ -153,5 +119,6 @@ class MainActivity : AppCompatActivity() {
         }
         backPressedTime = System.currentTimeMillis()
     }
-
 }
+
+//ereere
