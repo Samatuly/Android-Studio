@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SellerFragments.SellerProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellerusernameProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sellerusernameProfile_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/selleremail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Email"
+            app:layout_constraintEnd_toEndOf="@id/sellerusernameProfile"
+            app:layout_constraintStart_toStartOf="@id/sellerusernameProfile"
+            app:layout_constraintTop_toBottomOf="@id/sellerusernameProfile">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/selleremail_in_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellercompanyname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Company name"
+            app:layout_constraintEnd_toEndOf="@id/selleremail"
+            app:layout_constraintStart_toStartOf="@id/selleremail"
+            app:layout_constraintTop_toBottomOf="@id/selleremail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sellercompanyname_in_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellerpass_reg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Password"
+            app:layout_constraintEnd_toEndOf="@id/sellercompanyname"
+            app:layout_constraintStart_toStartOf="@id/sellercompanyname"
+            app:layout_constraintTop_toBottomOf="@id/sellercompanyname"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sellerpass_reg_in_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/saveProfileSeller"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_bg"
+            android:text="Save changes"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/sellerpass_reg"
+            app:layout_constraintStart_toStartOf="@+id/sellerpass_reg"
+            app:layout_constraintTop_toBottomOf="@+id/sellerpass_reg" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button_bg"
+            android:gravity="center"
+            android:text="Change your profile data"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toTopOf="@+id/sellerusernameProfile"
+            app:layout_constraintEnd_toEndOf="@+id/sellerusernameProfile"
+            app:layout_constraintStart_toStartOf="@+id/sellerusernameProfile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

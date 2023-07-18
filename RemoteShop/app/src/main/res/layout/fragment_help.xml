@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ClientFragments.Help">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Welcome to our online shop mobile application! We want to make your shopping experience as easy and enjoyable as possible, so we've created this help section to answer some common questions."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="1. How do I place an order? \nTo place an order, simply browse through our products, select the items you want, and add them to your cart."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="2. How do I track my order? \nOnce your order has been shipped, you'll receive a confirmation email with a tracking number. You can use this tracking number to track your order on our app or on the carrier's website.TextView"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="3. What payment methods do you accept\nWe accept several payment methods, including credit cards, debit cards, and PayPal. We use secure encryption technology to protect your payment information."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="4. What is your return policy? \nIf you're not completely satisfied with your purchase, you can return it for a refund or exchange within [insert number] days of receiving it. Please contact our customer support team to initiate a return."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. Our contacts: \nEmail: remoteshop@almaty.kz \nPhone number: +7-777-777-77-70"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+</FrameLayout>

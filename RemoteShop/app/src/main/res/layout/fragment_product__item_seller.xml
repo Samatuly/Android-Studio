@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SellerFragments.Product_Item_seller">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageProductSeller"
+            android:layout_width="329dp"
+            android:layout_height="149dp"
+            android:src="@drawable/dont_image_24"
+            app:layout_constraintEnd_toEndOf="@+id/sellerusernameProfile"
+            app:layout_constraintStart_toStartOf="@+id/sellerusernameProfile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellerusernameProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageProductSeller">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameProductSeller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/selleremail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Description"
+            app:layout_constraintEnd_toEndOf="@id/sellerusernameProfile"
+            app:layout_constraintStart_toStartOf="@id/sellerusernameProfile"
+            app:layout_constraintTop_toBottomOf="@id/sellerusernameProfile">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descriptionSellerPr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellercompanyname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="ImageURL"
+            app:layout_constraintEnd_toEndOf="@id/selleremail"
+            app:layout_constraintStart_toStartOf="@id/selleremail"
+            app:layout_constraintTop_toBottomOf="@id/selleremail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/imageURL_Seller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellerpass_reg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Price"
+            app:layout_constraintEnd_toEndOf="@id/sellercompanyname"
+            app:layout_constraintStart_toStartOf="@id/sellercompanyname"
+            app:layout_constraintTop_toBottomOf="@id/sellercompanyname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/price_Product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellerpass_reg1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Quantity"
+            app:layout_constraintEnd_toEndOf="@id/sellerpass_reg"
+            app:layout_constraintStart_toStartOf="@id/sellerpass_reg"
+            app:layout_constraintTop_toBottomOf="@id/sellerpass_reg">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/quantitySellerPr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/input_bg"
+            android:hint="Select category"
+            app:layout_constraintEnd_toEndOf="@+id/sellerpass_reg1"
+            app:layout_constraintStart_toStartOf="@+id/sellerpass_reg1"
+            app:layout_constraintTop_toBottomOf="@+id/sellerpass_reg1"
+            app:startIconDrawable="@drawable/category_24">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoComSellerAddPrUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+            <Button
+                android:id="@+id/saveChangesBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:text="save"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/deleteProductBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/design_default_color_error"
+                android:text="Delete"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

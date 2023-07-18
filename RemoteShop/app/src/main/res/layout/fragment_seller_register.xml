@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_first"
+    tools:context=".fragments.SellerFragments.SellerRegister">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="68dp"
+            android:text="Welcome to"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Remote Shop"
+            android:textColor="@color/purple_200"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellerusername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Seller user name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sellerusername_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/selleremail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Seller email"
+            app:layout_constraintEnd_toEndOf="@id/sellerusername"
+            app:layout_constraintStart_toStartOf="@id/sellerusername"
+            app:layout_constraintTop_toBottomOf="@id/sellerusername">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/selleremail_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellercompanyname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Seller company name"
+            app:layout_constraintEnd_toEndOf="@id/selleremail"
+            app:layout_constraintStart_toStartOf="@id/selleremail"
+            app:layout_constraintTop_toBottomOf="@id/selleremail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sellercompanyname_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellerpass_reg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Seller password"
+            app:layout_constraintEnd_toEndOf="@id/sellercompanyname"
+            app:layout_constraintStart_toStartOf="@id/sellercompanyname"
+            app:layout_constraintTop_toBottomOf="@id/sellercompanyname"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sellerpass_reg_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sellerpass_reg_conf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Seller confirm password"
+            app:layout_constraintEnd_toEndOf="@id/sellerpass_reg"
+            app:layout_constraintStart_toStartOf="@id/sellerpass_reg"
+            app:layout_constraintTop_toBottomOf="@id/sellerpass_reg"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sellerpass_reg_conf_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/seller_reg_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_bg"
+            android:text="sign up"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/sellerpass_reg_conf"
+            app:layout_constraintStart_toStartOf="@+id/sellerpass_reg_conf"
+            app:layout_constraintTop_toBottomOf="@+id/sellerpass_reg_conf" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Already have account?"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/seller_reg_btn"
+            app:layout_constraintTop_toBottomOf="@+id/seller_reg_btn" />
+
+        <TextView
+            android:id="@+id/SingIn_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:text="Sign In"
+            android:textColor="@color/design_default_color_error"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/seller_reg_btn"
+            app:layout_constraintTop_toBottomOf="@+id/seller_reg_btn" />
+
+        <ProgressBar
+            android:id="@+id/progressBarSellerReg"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

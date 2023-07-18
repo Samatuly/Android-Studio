@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_first"
+    tools:context=".activities.Admin.LoginAdmin">
+
+<!--    <EditText-->
+<!--        android:id="@+id/adminlogin"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="244dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:background="@drawable/input_bg"-->
+<!--        android:drawablePadding="10dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Admin login"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textColorHighlight="#A6A798"-->
+<!--        android:textColorHint="#A6A798"-->
+<!--        android:textColorLink="#A6A798"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/adminlogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="244dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Admin login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/adminlogin_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/adminpassword_out"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="Admin password"
+        app:layout_constraintEnd_toEndOf="@+id/adminlogin"
+        app:layout_constraintStart_toStartOf="@+id/adminlogin"
+        app:layout_constraintTop_toBottomOf="@+id/adminlogin"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/adminPassword_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Enter admin login and password:"
+        android:textColor="@color/purple_200"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/adminlogin"
+        app:layout_constraintStart_toStartOf="@+id/adminlogin" />
+
+    <Button
+        android:id="@+id/admin_enter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/button_bg"
+        android:text="ENTER"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/adminpassword_out"
+        app:layout_constraintStart_toStartOf="@+id/adminpassword_out"
+        app:layout_constraintTop_toBottomOf="@+id/adminpassword_out" />
+
+    <ProgressBar
+        android:id="@+id/progressBarAdminLogin"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

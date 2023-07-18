@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ClientFragments.FilteredProducts">
+
+    <TextView
+        android:id="@+id/noListFilter"
+        android:layout_width="256dp"
+        android:layout_height="105dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="200dp"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/filteredRec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+</FrameLayout>

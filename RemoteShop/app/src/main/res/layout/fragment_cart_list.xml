@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ClientFragments.CartList">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartRec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8px" />
+
+    <TextView
+        android:id="@+id/emptyCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="340px"
+        android:layout_marginTop="750px"
+        android:textColor="#504E4E"
+        android:textSize="24sp" />
+</FrameLayout>

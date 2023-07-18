@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_first"
+    tools:context=".fragments.ClientFragments.ClientRegister">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView88"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="68dp"
+            android:text="Welcome to"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView66"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Remote Shop"
+            android:textColor="@color/purple_200"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textView88"
+            app:layout_constraintTop_toTopOf="@+id/textView88" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/clientusername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Client user name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView88">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/clientusername_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/clinetemail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Client email"
+            app:layout_constraintEnd_toEndOf="@id/clientusername"
+            app:layout_constraintStart_toStartOf="@id/clientusername"
+            app:layout_constraintTop_toBottomOf="@id/clientusername">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/clientemail_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/clientcityname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Client city name"
+            app:layout_constraintEnd_toEndOf="@id/clinetemail"
+            app:layout_constraintStart_toStartOf="@id/clinetemail"
+            app:layout_constraintTop_toBottomOf="@id/clinetemail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/clientcityname_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/clinetpass_reg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Client password"
+            app:layout_constraintEnd_toEndOf="@id/clientcityname"
+            app:layout_constraintStart_toStartOf="@id/clientcityname"
+            app:layout_constraintTop_toBottomOf="@id/clientcityname"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/clientpass_reg_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/clientpass_reg_conf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Client confirm password"
+            app:layout_constraintEnd_toEndOf="@id/clinetpass_reg"
+            app:layout_constraintStart_toStartOf="@id/clinetpass_reg"
+            app:layout_constraintTop_toBottomOf="@id/clinetpass_reg"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/clientpass_reg_conf_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_bg"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/client_reg_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_bg"
+            android:text="sign up"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/clientpass_reg_conf"
+            app:layout_constraintStart_toStartOf="@+id/clientpass_reg_conf"
+            app:layout_constraintTop_toBottomOf="@+id/clientpass_reg_conf" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Already have account?"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/client_reg_btn"
+            app:layout_constraintTop_toBottomOf="@+id/client_reg_btn" />
+
+        <TextView
+            android:id="@+id/SingIn_reg_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:text="Sign In"
+            android:textColor="@color/design_default_color_error"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/client_reg_btn"
+            app:layout_constraintTop_toBottomOf="@+id/client_reg_btn" />
+
+        <ProgressBar
+            android:id="@+id/progressBarClientReg"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

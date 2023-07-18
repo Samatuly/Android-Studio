@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/productsAllSeller"
+        android:title="Products"
+        android:icon="@drawable/all_products_30"
+        />
+
+    <item
+        android:id="@+id/ddProductSeller"
+        android:title="Add Product"
+        android:icon="@drawable/seller_add_30"
+        />
+
+    <item
+        android:id="@+id/AccountSellerBottom"
+        android:title="My Account"
+        android:icon="@drawable/account_30"
+        />
+
+    <item
+        android:id="@+id/MessageSellerBottom"
+        android:title="Messages"
+        android:icon="@drawable/ic_baseline_message_24"
+        />
+
+
+</menu>

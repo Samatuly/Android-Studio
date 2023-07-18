@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ClientFragments.Settings">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/termstouse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/set_btn"
+            android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:drawablePadding="10dp"
+            android:paddingRight="10dp"
+            android:text="Terms of Use"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/PrivacyPolicy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/set_btn"
+            android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:drawablePadding="10dp"
+            android:paddingRight="10dp"
+            android:text="Privacy policy"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/help"
+            app:layout_constraintStart_toStartOf="@+id/help"
+            app:layout_constraintTop_toBottomOf="@+id/help" />
+
+        <TextView
+            android:id="@+id/help"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/set_btn"
+            android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:drawablePadding="10dp"
+            android:paddingRight="10dp"
+            android:text="Help"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/termstouse"
+            app:layout_constraintStart_toStartOf="@+id/termstouse"
+            app:layout_constraintTop_toBottomOf="@+id/termstouse" />
+
+        <TextView
+            android:id="@+id/log_out_client"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/set_btn"
+            android:drawableRight="@drawable/ic_baseline_logout_24"
+            android:drawablePadding="10dp"
+            android:paddingRight="10dp"
+            android:text="Log out"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/PrivacyPolicy"
+            app:layout_constraintStart_toStartOf="@+id/PrivacyPolicy"
+            app:layout_constraintTop_toBottomOf="@+id/PrivacyPolicy" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:background="@drawable/button_bg"
+            android:text="Welcome to "
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/btn_bg_red"
+            android:text="Remote Shop"
+            android:textColor="@color/purple_200"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textView25"
+            app:layout_constraintTop_toTopOf="@+id/textView25" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
